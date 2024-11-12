@@ -29,9 +29,13 @@ const Signup = () => {
   return (
     <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
       <div className="h-full w-full p-6 bg-gray-100 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100">
-        <h1 className="text-3xl font-semibold text-center text-gray-300">
-          <span className="text-gray-500 font-light uppercase">Babble</span>
-        </h1>
+        <div className="flex justify-center items-center">
+          <div className="avatar">
+            <div className="w-24 rounded-full">
+              <img src="/logo.png" alt="user avatar"></img>
+            </div>
+          </div>
+        </div>
 
         <form onSubmit={handleSubmit}>
           <div>
@@ -107,8 +111,15 @@ const Signup = () => {
           </Link>
 
           <div>
-            <button disabled={loading} className="btn btn-block bg-gray-50 text-black btn-sm mt-5 h-10">
-              {loading ? <span className="loading loading-spinner"></span> : "Signup" }
+            <button
+              disabled={loading}
+              className="btn btn-block bg-gray-50 text-black btn-sm mt-5 h-10"
+            >
+              {loading ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Signup"
+              )}
             </button>
           </div>
         </form>
